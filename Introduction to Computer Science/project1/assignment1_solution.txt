@@ -1,0 +1,207 @@
+#include <stdio.h>
+/* Function declarations */
+void Ex1();
+void Ex2();
+void Ex3();
+void Ex4();
+void Ex5();
+void Ex6();
+
+/* Declarations of other functions */
+
+int median(int , int , int );
+int largestDigit(int);
+int longest(int);
+int mul(int , int );
+double sum(int , double );
+int sum_proper_divisors(int);
+void amicable_numbers(int);
+/* ------------------------------- */
+
+int main()
+{
+	int select = 0, i, all_Ex_in_loop = 0;
+	printf("Run menu once or cyclically?\n(Once - enter 0, cyclically - enter other number) ");
+	if (scanf("%d", &all_Ex_in_loop) == 1)
+		do
+		{
+			for (i = 1; i <= 6; i++)
+				printf("Ex%d--->%d\n", i, i);
+			printf("EXIT-->0\n");
+			do {
+				select = 0;
+				printf("please select 0-6 : ");
+				scanf("%d", &select);
+			} while ((select<0) || (select>6));
+			switch (select)
+			{
+			case 1: Ex1(); break;
+			case 2: Ex2(); break;
+			case 3: Ex3(); break;
+			case 4: Ex4(); break;
+			case 5: Ex5(); break;
+			case 6: Ex6(); break;
+			}
+		} while (all_Ex_in_loop && select);
+		return 0;
+}
+
+/*.............................*/
+void Ex1()
+{
+	int a, b, c;
+	printf("Enter 3 integers\n");
+	scanf("%d%d%d", &a, &b, &c);
+	printf("the median is %d\n", median(a, b, c));
+}
+
+int median(int a, int b, int c)
+{
+	int min, max;
+	min = (a < b) ? a : b;
+	max = a + b - min;
+	if (c < min)
+		return min;
+	if (c < max)
+		return c;
+	return max;
+}
+
+void Ex2()
+{
+int num;
+printf("Enter an integer number\n");
+scanf("%d", &num);
+printf("the largest digit is %d\n", largestDigit(num));
+}
+
+int largestDigit(int num) 
+{
+	int temp, large = 0;
+	while( num > 0) 
+	{
+		temp = num % 10;
+		if (temp > large)
+		{
+			large = temp;
+		}
+		num = num / 10;
+	}
+	return large;
+}
+
+void Ex3() 
+{
+	int n;
+	printf("Enter the number of days: ");
+	scanf("%d", &n);
+	printf("Enter the sequence of amount rain in mm for %d days\n",n);
+	printf("the first day of the longest sequence is %d\n", longest(n));
+}
+
+
+int longest(int n)
+{
+	int i, max = 0, num, num_of_0 = 0, numRain = 0, position = 1;
+	for (i = 1; i <= n; i++)
+	{
+		
+		scanf("%d", &num);
+		if (num == 0)
+			numRain = 0;
+		else
+			numRain++;
+		if (numRain>max)
+		{
+			position = i - numRain + 1;
+			max = numRain;
+		}
+	}
+	return position;
+}
+
+
+void Ex4()
+{
+	int num1, num2;
+	printf("Enter two numbers\n");
+	scanf("%d%d", &num1, &num2);
+		printf("%d*%d = %d\n", num1, num2, mul(num1, num2));
+}
+int mul(int first, int second)
+{
+	int temp,result=0;
+	if (first < second)
+	{
+		temp = first;
+		first = second;
+		second = temp;
+	}
+	while (second)
+	{
+		if (second % 2)
+			result += first;
+		first += first;
+		second /= 2;
+	}
+	return result;
+}
+
+
+void Ex5()
+{
+	int n;
+	double x;
+	printf("Enter n\n");
+	scanf("%d", &n);
+	printf("Enter x\n");
+	scanf("%lf", &x);
+	printf("the sum is %lf\n", sum(n, x));
+}
+double sum(int n, double x)
+{
+	int i;
+	double s = 1,last=1;
+	for (i = 1; i <= n; i++)
+	{
+		last *= (-1)*(x*x)/i;
+		s += last;
+	}
+	return s;
+}
+
+void Ex6()
+{
+	int num;
+	printf("Enter a number and the program will print all the amicable numbers in this field: ");
+	scanf("%d", &num);
+	amicable_numbers(num);
+}
+
+	void amicable_numbers(int num)
+	{
+	int sum1, sum2, i;
+	
+	for (i = 2; i <= num; i++) 
+	{
+		sum1 = sum_proper_divisors(i);
+		if (sum1 > i) // to avoid duplication
+		{
+			sum2 = sum_proper_divisors(sum1);
+			if (i == sum2)
+				printf("%4d   %4d \n", i, sum1);
+		}
+	}
+}
+
+int sum_proper_divisors(int num)
+{
+	//assumption: num>1
+	int i, sum = 1;
+	for (i = 2; i * i < num; i++)
+		if (num % i == 0)
+			sum += i + (num / i);
+	if (i * i == num)
+		sum += i;
+	return sum;
+}
