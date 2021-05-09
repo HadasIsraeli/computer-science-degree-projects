@@ -1,0 +1,170 @@
+#include <stdio.h>
+/* Function declarations */
+void Ex1();
+void Ex2();
+void Ex3();
+void Ex4();
+void Ex5();
+void Ex6();
+
+/* Declarations of other functions */
+int num_of_even();
+int max_digit(int );
+int is_odd_digit_sum(int);
+int add_one(int );
+int number_order(int n);
+int change(int n, int dig);
+
+int main()
+{
+	int select = 0, i, all_Ex_in_loop = 0;
+	printf("Run menu once or cyclically?\n(Once - enter 0, cyclically - enter other number) ");
+	if (scanf_s("%d", &all_Ex_in_loop) == 1)
+		do
+		{
+			for (i = 1; i <= 6; i++)
+				printf("Ex%d--->%d\n", i, i);
+			printf("EXIT-->0\n");
+			do {
+				select = 0;
+				printf("please select 0-6 : ");
+				scanf_s("%d", &select);
+			} while ((select < 0) || (select > 6));
+			switch (select)
+			{
+			case 1: Ex1(); break;
+			case 2: Ex2(); break;
+			case 3: Ex3(); break;
+			case 4: Ex4(); break;
+			case 5: Ex5(); break;
+			case 6: Ex6(); break;
+			}
+		} while (all_Ex_in_loop && select);
+		return 0;
+}
+
+void Ex1()
+{
+	printf("Enter a sequence of Natural numbers and to stop enter -1: \n");
+	printf("The a amount of the even numbers is: %d\n", num_of_even());
+}
+int num_of_even()
+{
+	int num;
+	scanf_s("%d", &num);
+	if (num == -1) // stoping point
+	{
+		return 0;
+	}
+	if (num % 2 == 0) //checking if the num is even
+	{
+		return 1 + num_of_even();//adding 1 to the count
+	}
+	else
+		return num_of_even();
+
+	//return num_of_even() + ((num + 1) % 2);
+}
+void Ex2()
+{
+	int n;
+	printf("Enter a Natural number(till 9 digits) to get max digit of the number : \n");
+	scanf_s("%d", &n);
+	printf("The max digit of the number is: %d \n", max_digit(n));
+}
+int max_digit(int n)
+{
+	int temp_max;
+	if (n < 10)
+	{
+		return n;
+	}
+	else
+	{
+		temp_max = max_digit(n/10);
+		
+		return (n  % 10 > temp_max)? n % 10:temp_max;
+		
+	}
+}
+void Ex3()
+{
+	int n;
+	printf("Please enter a natural number:\n");
+	scanf_s("%d", &n);
+	if(is_odd_digit_sum(n))
+	       printf("The sum of %d is odd\n", n);
+	else
+		printf("The sum of %d is even\n", n);
+}
+int is_odd_digit_sum(int num)
+{
+	if (num < 10) 
+		return num%2;
+
+	return (is_odd_digit_sum(num / 10) + num) % 2;
+}
+void Ex4()
+{
+	int n;
+	printf("Enter an integer larger then 0 or equel to 0:");
+	scanf_s("%d", &n);
+	printf("The new integers are:%d\n", add_one(n));
+}
+int add_one(int n)
+{//The function adding 1 to each digit
+	if (n < 10)
+		return (n + 1) % 10;
+	else
+		return (n % 10 + 1) % 10 + 10 * add_one(n / 10);
+}
+void Ex5()
+{
+	int n,flag;
+	printf("Please enter a natural number till 9 different digits\n");
+	scanf_s("%d", &n);
+	flag = number_order(n);
+	if (flag == 1)
+		printf("The sequence of digit is going up\n");
+	else if (flag == -1)
+		printf("The sequence of digit is going down\n");
+	else
+		printf("The sequence of digit is not monotone\n");
+}
+int number_order(int n)
+{
+	
+	int flag;
+	if (n % 10 < (n / 10) % 10) //checking if the n is increasing or decreasing
+		flag = -1;
+	else
+		flag = 1;
+
+	if (n < 100)
+	{
+		return flag;
+	}
+	
+	if (flag == number_order(n/10))
+		return flag;
+	return 0;
+}
+void Ex6()
+{
+	int n, dig;
+	printf("Please enter a non-negative integer and a digit(from 0 to 9) that will be deleted from the number:\n");
+	scanf_s("%d%d", &n, &dig);
+	printf("For the input n=%d, dig=%d, the result is %d\n", n, dig, change(n, dig));
+}
+int change(int n, int dig)
+{
+	if (n < 1)//stoping point
+		return 0;
+	else
+	{
+		if (dig == (n % 10))//checking if the dig is equal to the last digit
+			return change(n / 10, dig);
+		else
+			return (n % 10) + 10 * change(n / 10, dig);
+	}
+}
