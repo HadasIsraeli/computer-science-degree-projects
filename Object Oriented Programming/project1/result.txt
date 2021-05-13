@@ -1,0 +1,31 @@
+----- start testPolynomial ---------
+test0 :0
+test1: polynomial = 0
+test2: polynomial = 0+0X^1+0.4X^2
+degree=6
+test3: polynomial = 0.1+0.2X^1+0X^2+11.5X^3+1.3X^4
+test4: polynomial = 0
+test6 :maxDegree = 4
+______________
+----- start testRational ---------
+test7
+polynomial = 0
+--------------------------
+polynomial = 1
+polynomial = 0
+--------------------------
+polynomial = 1
+test8
+polynomial = 0+2X^1+2X^2+3X^3+4X^4+5X^5
+--------------------------
+polynomial = 1.2+2X^1+2X^2+3X^3
+
+polynomial = 0+2X^1+2X^2+3X^3+4X^4+5X^5
+--------------------------
+polynomial = 1.2+2X^1+2X^2+3X^3
+
+test9
+nom = polynomial = 0+2X^1+2X^2+3X^3+4X^4+5X^5
+denom = polynomial = 1.2+2X^1+2X^2+3X^3
+test10 :maxDegree = 5
+__________________________
