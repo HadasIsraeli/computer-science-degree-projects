@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{05c7ca2e-75d9-4073-b0c9-1d0751d969b7}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{44b1e705-cf18-4250-b43c-4f7d58710334}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{427f3f0d-fef5-4bfc-a4e9-d34d0970ddf5}</UniqueIdentifier>
+      <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Dlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgDlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Figure.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="StdAfx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Dlg.rc">
+      <Filter>Source Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Dlg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgDlg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Figure.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="StdAfx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\Dlg.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="3674933_412015656.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="pic\cancel2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="pic\save2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="pic\ok2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="pic\load2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="pic\undo2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="pic\redo2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="pic\rectangle2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="pic\elipse2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="pic\squre2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="pic\circle21.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="pic\trai.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="pic\line.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="pic\trai2.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="pic\pick.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="pic\paint.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="pic\bitmap19.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\Dlg.rc2">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\Circle.cur">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\Ellipse.cur">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\Eraser.cur">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\Line.cur">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\Move.cur">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\Paint.cur">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\Pencil.cur">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\Rectangle.cur">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\Square.cur">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\Triangle.cur">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\Arrow.cur">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+</Project>
